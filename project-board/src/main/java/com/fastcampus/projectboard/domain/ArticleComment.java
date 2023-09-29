@@ -8,9 +8,7 @@ public class ArticleComment {
     private String content; // 내용
 
     private LocalDateTime createdAt; // 생성 일시
-    private String createBy; // 생성자
+    private String createdBy; // 생성자
     private LocalDateTime modifiedAt; // 수정일시
     private String modifiedBy; // 수정자
 }
-
-// 맞다 mysql root의 비밀번호는 qwert123 이니까 참고하세여
