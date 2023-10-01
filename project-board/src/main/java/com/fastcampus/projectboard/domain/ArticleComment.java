@@ -12,3 +12,5 @@ public class ArticleComment {
     private LocalDateTime modifiedAt; // 수정일시
     private String modifiedBy; // 수정자
 }
+
+// 맞다 mysql root의 비밀번호는 qwert123 이니까 참고하세여
