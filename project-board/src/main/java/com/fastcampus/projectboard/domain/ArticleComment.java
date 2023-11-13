@@ -20,9 +20,9 @@ import java.util.Objects;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy"),
 })
-@EntityListeners(AuditingEntityListener.class) // 해당 클래스에 오디팅 기능을 포함함.
+//@EntityListeners(AuditingEntityListener.class) // 해당 클래스에 오디팅 기능을 포함함.
 @Entity
-public class ArticleComment {
+public class ArticleComment extends AuditingFields{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,11 +32,11 @@ public class ArticleComment {
     @Setter @ManyToOne(optional = false) private Article article; // 게시글(id)
     //@Column은 객체 필드를 테이블의 컬럼에 매핑시켜주는 어노테이션입니다.
     @Setter @Column(nullable = false, length = 500) private String content; // 내용
-
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성 일시
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+//
+//    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성 일시
+//    @CreatedBy @Column(nullable = false, length = 100) private String createdBy; // 생성자
+//    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
+//    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
 
     protected ArticleComment() {}
 
