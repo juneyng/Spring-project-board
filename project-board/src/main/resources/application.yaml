@@ -25,6 +25,8 @@ spring:
     base-path: /api
     detection-strategy: annotated
 
+server:
+  port: 8081
 ---
 
 #spring:
