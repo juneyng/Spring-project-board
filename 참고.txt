@@ -1,0 +1,33 @@
+Jetbrains Space 환경에서 매번 실행 시 sql문이 실행이 안되는 오류가 있다.
+
+그럴 땐 mysql을 재설치 하는 것을 추천하며, 이후 sql server 연결시에는 아래의 링크를 참고하여   해결하는 것을 추천한다,.
+
+https://www.lesstif.com/dbms/mysql-error-1698-28000-89555999.html
+
+<Jetbrains Space 환경에서 mysql 서버 구동하는법>
+
+1. apt-get update
+2. apt-get install mysql-server
+3. service mysql restart
+4. mysql -u root -p mysql
+5. SELECT User, Host, plugin FROM mysql.user;
+6. UPDATE user SET plugin='caching_sha2_password' WHERE User='root';
+7. SET PASSWORD FOR 'root'@'localhost' = 'qwert123';
+8. FLUSH PRIVILEGES;
+9. DATABASE - CONSOLE 에서 기본 sql 실행시키기
+--------------------------------------------------------------------------------
+<백업용 콘솔>
+
+show databases;
+
+create database board;
+
+create user 'juneyng'@'localhost' identified by 'juneyng02';
+select user from `mysql`.`user`;
+show grants  for 'juneyng'@'localhost';
+grant all on `board`.* to 'juneyng'@'localhost' with grant option;
+
+flush privileges;
+--------------------------------------------------------------------------------
+<github_token>
+: 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

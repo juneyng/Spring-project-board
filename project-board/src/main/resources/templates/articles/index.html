@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
@@ -8,11 +8,7 @@
 
 <body>
 
-    <header>
-        <!-- 헤더 삽입부 -->
-        헤더 삽입부
-        <hr>
-    </header>
+    <header th:replace="~{header :: header}"></header>
 
     <main>
         <!-- 검색창 -->
@@ -32,16 +28,55 @@
         </form>
 
         <!-- 테이블 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>해시태그</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>글 1</th>
+                    <th>#java</th>
+                    <th>User1</th>
+                    <th>2024-01-01</th>
+                </tr>
+                <tr>
+                    <th>글 2</th>
+                    <th>#spring</th>
+                    <th>User2</th>
+                    <th>2024-01-02</th>
+                </tr>
+                <tr>
+                    <th>글 3</th>
+                    <th>#C++</th>
+                    <th>User3</th>
+                    <th>2024-01-03</th>
+                </tr>
+            </tbody>
+        </table>
 
         <!-- navigation bar -->
+        <nav>
+            <table>
+                <tr>
+                    <td>previous</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>Next</td>
+                </tr>
+            </table>
+        </nav>
     </main>
 
 
-    <footer>
-        <hr>
-        <!--  footer 삽입부-->
-        footer 삽입부
-    </footer>
+    <footer th:replace="~{footer :: footer}"></footer>
 
 </body>
 </html>
